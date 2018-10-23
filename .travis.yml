@@ -2,4 +2,4 @@ language: java
 script:
   - openssl aes-256-cbc -pass pass:$OPENSSL_PWD -in private-key.gpg.enc -out private-key.gpg -d
   - gpg --import private-key.gpg
-  - mvn -V -B -Prelease --settings ./settings.xml deploy
+  - mvn -V -B -Prelease -s settings.xml deploy
